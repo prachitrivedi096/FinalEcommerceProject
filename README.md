@@ -8,6 +8,9 @@ Frontend: ReactJs
 Backend: Node.js
 Database: MongoDB (Atlas)
 
+#Database Schema Design
+Added Schema Image in zip folder
+
 #Git URL
 https://github.com/prachitrivedi096/FinalEcommerceProject/
 
