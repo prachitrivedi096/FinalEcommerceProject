@@ -10,8 +10,7 @@ app.use(express.json());
 
 const MONGO_URI = 'mongodb+srv://prachiptrivedi096:fBcqTk0GAsFTmP0n@cluster0.7giut2w.mongodb.net/EcommerceProject?retryWrites=true&w=majority&appName=Cluster0';
 
-console.log('MONGO_URI:', MONGO_URI);
-
+//console.log('MONGO_URI:', MONGO_URI);
 
 // Connect to MongoDB
 mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
