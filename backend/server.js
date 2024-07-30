@@ -2,6 +2,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
+const productRoutes = require('./routes/productRoutes');
 
 const app = express();
 
@@ -22,6 +23,8 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .catch(err => {
         console.error('MongoDB connection error:', err.message);
     });
+
+app.use('/api/products', productRoutes);
 
 // Other routes and middleware
 
