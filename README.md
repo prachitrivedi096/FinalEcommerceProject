@@ -15,3 +15,5 @@ Added Schema Image in zip folder
 https://github.com/prachitrivedi096/FinalEcommerceProject/
 
 #Connected Database with MongoDB Atlas
+
+#Product controller is added
