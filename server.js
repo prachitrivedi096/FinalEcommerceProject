@@ -2,13 +2,12 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
+const productRoutes = require('./routes/productRoutes');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-
-const productRoutes = require('./routes/productRoutes');
 
 const MONGO_URI = 'mongodb+srv://prachiptrivedi096:fBcqTk0GAsFTmP0n@cluster0.7giut2w.mongodb.net/EcommerceProject?retryWrites=true&w=majority&appName=Cluster0';
 
