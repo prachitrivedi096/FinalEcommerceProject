@@ -1,14 +1,67 @@
 [
     {
       "id": 1,
-      "name": "Product 1",
-      "price": 100,
-      "description": "Description of Product 1"
+      "name": "Stud Diamond Earrings",
+      "category": "Earrings",
+      "price": 150,
+      "description": "The beauty of stars with these diamond-adorned stud earrings crafted in 18 kara.",
+      "photoURL": "/images/Stud Diamond Earring.jpeg"
     },
     {
       "id": 2,
-      "name": "Product 2",
+      "name": "Diamond Drop Earrings",
+      "category": "Earrings",
+      "price": 185,
+      "description": "18-karat yellow gold drop earrings and refined glamour.",
+      "photoURL": "/images/Diamond Drop Earrings.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Abstract Drop Earrings",
+      "category": "Earrings",
       "price": 200,
-      "description": "Description of Product 2"
+      "description": "Contemporary style abstract drop earrings crafted in 22-karat yellow gold.",
+      "photoURL": "/images/Abstract Drop Earrings.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "Sleek Chic Hoop Earrings",
+      "category": "Earrings",
+      "price": 200,
+      "description": "22-karat yellow gold huggies Hoop Earrings with charming teardrop pendant.",
+      "photoURL": "/images/Sleek Chic Hoop Earrings.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Blush of Gold Diamond Bracelet",
+      "category": "Bracelets",
+      "price": 185,
+      "description": "A pink stone and shimmering diamonds in a floral pattern to give you this bracelet.",
+      "photoURL": "/images/Blush of Gold Diamond Bracelet.jpeg"
+    },
+    {
+      "id": 6,
+      "name": "Mesmerising Diamond Bracelet",
+      "category": "Bracelets",
+      "price": 250,
+      "description": "18 Karat yellow gold and adorned with shimmering Diamonds.",
+      "photoURL": "/images/Mesmerising Diamond Bracelet.jpeg"
+    },
+    {
+      "id": 7,
+      "name": "Eternity Diamond Bracelet",
+      "category": "Bracelets",
+      "price": 300,
+      "description": "18 Karat rose gold Diamond Bracelet, featuring an eternity design.",
+      "photoURL": "/images/Eternity Diamond Bracelet.jpeg"
+    },
+    {
+      "id": 8,
+      "name": "Elegant Motif Diamond Bracelet",
+      "category": "Bracelets",
+      "price": 150,
+      "description": "18 Karat Bracelet in rose gold with an intricate floral pattern and luxurious ovals.",
+      "photoURL": "/images/Elegant Motif Diamond Bracelet.jpeg"
     }
-]  
+]
+  

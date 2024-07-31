@@ -6,7 +6,7 @@ import { useCart } from '../contexts/CartContext';
 const ProductDetail = () => {
   const { id } = useParams();
   const product = products.find(p => p.id === parseInt(id));
-  const { addToCart, removeFromCart } = useCart(); // Use Cart Context
+  const { addToCart} = useCart(); // Use Cart Context
   const [quantity, setQuantity] = useState(1);
 
   if (!product) return <div>Product not found</div>;
@@ -23,12 +23,9 @@ const ProductDetail = () => {
     addToCart(product, quantity);
   };
 
-  const handleRemoveFromCart = () => {
-    removeFromCart(product.id);
-  };
-
   return (
     <div>
+      <img src={product.photoURL} alt={product.name} style={{ width: '200px', height: '200px' }} />
       <h2>{product.name}</h2>
       <p>{product.description}</p>
       <p>${product.price}</p>
@@ -41,7 +38,6 @@ const ProductDetail = () => {
       </div>
 
       <button onClick={handleAddToCart}>Add to Cart</button>
-      <button onClick={handleRemoveFromCart}>Remove from Cart</button>
     </div>
   );
 };
