@@ -23,7 +23,7 @@ const ProductDetail = () => {
 
   const handleAddToCart = () => {
     addToCart(product, quantity);
-    navigate('/cart');
+    navigate('/ShoppingCart');
   };
 
   return (
@@ -44,7 +44,6 @@ const ProductDetail = () => {
         {/* Buttons */}
         <div className="product-buttons">
           <button className="add-to-cart-button" onClick={handleAddToCart}>Add to Cart</button>
-          <button className="back-button" onClick={() => navigate(-1)}>Back</button>
         </div>
       </div>
     </div>

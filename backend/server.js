@@ -17,6 +17,10 @@ const MONGO_URI = 'mongodb+srv://prachiptrivedi096:fBcqTk0GAsFTmP0n@cluster0.7gi
 mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('MongoDB connected');
+        const PORT = process.env.PORT || 5000;
+        app.listen(PORT, () => {
+            console.log(`Server running on port ${PORT}`);
+        });
         // Optional: Close the connection after testing
         mongoose.connection.close();
     })
@@ -28,7 +32,4 @@ app.use('/api/products', productRoutes);
 
 // Other routes and middleware
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+

@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Route, Routes, Link, NavLink} from 'react-rout
 import ProductHome from './components/ProductHome';
 import ProductDetail from './components/ProductDetail';
 import Cart from './components/ShoppingCart';
+import { CartProvider } from './contexts/CartContext';
 
 import './App.css';
 
 const App = () => {
   return (
+    <CartProvider>
     <Router>
     <div>
       <nav>
@@ -23,6 +25,7 @@ const App = () => {
       </Routes>
     </div>
   </Router>
+  </CartProvider>
   );
 };
 
