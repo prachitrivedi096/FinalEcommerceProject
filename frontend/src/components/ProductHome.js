@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import products from '../products.json';
 import { useCart } from '../contexts/CartContext';
 
 const ProductList = () => {
   const [productList, setProductList] = useState([]);
   const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setProductList(products);
   }, []);
+
+  const handleAddToCart = (product) => {
+    addToCart(product, 1);
+    navigate('/shoppingcart'); // Redirect to shop0ping cart
+  };
 
   const earrings = productList.filter(product => product.category === 'Earrings');
   const bracelets = productList.filter(product => product.category === 'Bracelets');
@@ -25,10 +31,10 @@ const ProductList = () => {
               <div className="product-content">
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
-                <p>${product.price}</p>
+                <b><p>Price: ${product.price}</p></b>
                 <div className="product-buttons">
                   <button className="view-details-button" onClick={() => window.location.href = `/product/${product.id}`}>View Details</button>
-                  <button className="add-to-cart-button" onClick={() => addToCart(product, 1)}>Add to Cart</button>
+                  <button className="add-to-cart-button" onClick={() => handleAddToCart(product)}>Add to Cart</button>
                 </div>
               </div>
             </div>
@@ -44,10 +50,10 @@ const ProductList = () => {
               <div className="product-content">
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
-                <center><p>${product.price}</p></center>
+                <center><b><p>Price: ${product.price}</p></b></center>
                 <div className="product-buttons">
                   <button className="view-details-button" onClick={() => window.location.href = `/product/${product.id}`}>View Details</button>
-                  <button className="add-to-cart-button" onClick={() => addToCart(product, 1)}>Add to Cart</button>
+                  <button className="add-to-cart-button" onClick={() => handleAddToCart(product)}>Add to Cart</button>
                 </div>
               </div>
             </div>

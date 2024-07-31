@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import products from '../products.json';
 import { useCart } from '../contexts/CartContext';
+import './ProductDetail.css';
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const product = products.find(p => p.id === parseInt(id));
   const { addToCart} = useCart(); // Use Cart Context
   const [quantity, setQuantity] = useState(1);
@@ -21,25 +23,33 @@ const ProductDetail = () => {
 
   const handleAddToCart = () => {
     addToCart(product, quantity);
+    navigate('/cart');
   };
 
   return (
-    <div>
-      <img src={product.photoURL} alt={product.name} style={{ width: '200px', height: '200px' }} />
-      <h2>{product.name}</h2>
-      <p>{product.description}</p>
-      <p>${product.price}</p>
+    <div className="product-detail">
+      <img src={product.photoURL} alt={product.name} />
+      <div className="product-detail-content">
+        <h2>{product.name}</h2>
+        <p>{product.description}</p>
+        <b><p>Price: ${product.price * quantity}</p></b>
 
-      {/* Quantity Control */}
-      <div>
-        <button onClick={decreaseQuantity}>-</button>
-        <span>{quantity}</span>
-        <button onClick={increaseQuantity}>+</button>
+        {/* Quantity Control */}
+        <div className="quantity-control">
+          <button onClick={decreaseQuantity}>-</button>
+          <span>{quantity}</span>
+          <button onClick={increaseQuantity}>+</button>
+        </div>
+
+        {/* Buttons */}
+        <div className="product-buttons">
+          <button className="add-to-cart-button" onClick={handleAddToCart}>Add to Cart</button>
+          <button className="back-button" onClick={() => navigate(-1)}>Back</button>
+        </div>
       </div>
-
-      <button onClick={handleAddToCart}>Add to Cart</button>
     </div>
   );
 };
+
 
 export default ProductDetail;

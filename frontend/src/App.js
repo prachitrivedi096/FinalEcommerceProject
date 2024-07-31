@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, NavLink} from 'react-router-dom';
-import ProductList from './components/ProductList';
+import ProductHome from './components/ProductHome';
 import ProductDetail from './components/ProductDetail';
-import Cart from './components/Cart';
+import Cart from './components/ShoppingCart';
 
 import './App.css';
 
@@ -13,13 +13,13 @@ const App = () => {
       <nav>
         <center>
         <NavLink exact to="/" activeClassName="active">Home</NavLink>
-        <NavLink to="/cart" activeClassName="active">Shopping Cart</NavLink>
+        <NavLink to="/ShoppingCart" activeClassName="active">Shopping Cart</NavLink>
         </center>
       </nav>
       <Routes>
-        <Route path="/" element={<ProductList />} />
+        <Route path="/" element={<ProductHome />} />
         <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/ShoppingCart" element={<Cart />} />
       </Routes>
     </div>
   </Router>
