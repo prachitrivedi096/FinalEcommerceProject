@@ -21,5 +21,5 @@ npm install express mongoose cors
 npm i
 
 ## To run the project
-# cd frontend
-# npm start
+cd frontend
+npm start
