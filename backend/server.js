@@ -21,7 +21,6 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
         app.listen(PORT, () => {
             console.log(`Server running on port ${PORT}`);
         });
-        // Optional: Close the connection after testing
         mongoose.connection.close();
     })
     .catch(err => {
@@ -29,7 +28,5 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     });
 
 app.use('/api/products', productRoutes);
-
-// Other routes and middleware
 
 

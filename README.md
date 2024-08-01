@@ -3,17 +3,24 @@ Student Name: Prachi Trivedi
 Student Number: 8955448
 Date: 2024-07-19
 
-#Technology stack
+# Technology stack
 Frontend: ReactJs
 Backend: Node.js
 Database: MongoDB (Atlas)
 
-#Database Schema Design
-Added Schema Image in zip folder
+# Database Schema Design
+image.png
+Also attached screenshot in zip (image.png)
 
-#Git URL
+# Github URL
 https://github.com/prachitrivedi096/FinalEcommerceProject/
 
-#Connected Database with MongoDB Atlas
+# Backend Configured
+npm install express mongoose cors
 
-#Product controller is added
+# Frontend Configured
+npm i
+
+## To run the project
+# cd frontend
+# npm start

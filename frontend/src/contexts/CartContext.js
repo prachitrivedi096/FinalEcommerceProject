@@ -1,3 +1,4 @@
+//To manage shopping cart
 import React, { createContext, useState, useContext, useEffect} from 'react';
 
 const CartContext = createContext();
@@ -5,6 +6,7 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
+  //Sync with local storage
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem('cart'));
     if (savedCart) {
@@ -16,6 +18,7 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
+  //Manage cart state
   const addToCart = (product, quantity) => {
     setCart(prevCart => {
       const existingProductIndex = prevCart.findIndex(item => item.id === product.id);

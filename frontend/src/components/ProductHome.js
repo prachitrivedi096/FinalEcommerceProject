@@ -14,7 +14,7 @@ const ProductList = () => {
 
   const handleAddToCart = (product) => {
     addToCart(product, 1);
-    navigate('/shoppingcart'); // Redirect to shop0ping cart
+    navigate('/shoppingcart');
   };
 
   const earrings = productList.filter(product => product.category === 'Earrings');
