@@ -9,8 +9,7 @@ Backend: Node.js
 Database: MongoDB (Atlas)
 
 # Database Schema Design
-image.png
-Also attached screenshot in zip (image.png)
+Attached screenshot in zip (image.png)
 
 # Github URL
 https://github.com/prachitrivedi096/FinalEcommerceProject/
