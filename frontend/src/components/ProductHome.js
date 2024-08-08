@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import products from '../products.json';
 import { useCart } from '../contexts/CartContext';
 
-const ProductList = () => {
+const ProductHome = () => {
   const [productList, setProductList] = useState([]);
   const { addToCart } = useCart();
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const ProductList = () => {
 
   const handleAddToCart = (product) => {
     addToCart(product, 1);
-    navigate('/shoppingcart');
+    navigate('/user/shoppingcart');
   };
 
   const earrings = productList.filter(product => product.category === 'Earrings');
@@ -33,7 +33,7 @@ const ProductList = () => {
                 <p>{product.description}</p>
                 <b><p>Price: ${product.price}</p></b>
                 <div className="product-buttons">
-                  <button className="view-details-button" onClick={() => window.location.href = `/product/${product.id}`}>View Details</button>
+                  <button className="view-details-button" onClick={() => window.location.href = `/user/product/${product.id}`}>View Details</button>
                   <button className="add-to-cart-button" onClick={() => handleAddToCart(product)}>Add to Cart</button>
                 </div>
               </div>
@@ -52,7 +52,7 @@ const ProductList = () => {
                 <p>{product.description}</p>
                 <center><b><p>Price: ${product.price}</p></b></center>
                 <div className="product-buttons">
-                  <button className="view-details-button" onClick={() => window.location.href = `/product/${product.id}`}>View Details</button>
+                  <button className="view-details-button" onClick={() => window.location.href = `/user/product/${product.id}`}>View Details</button>
                   <button className="add-to-cart-button" onClick={() => handleAddToCart(product)}>Add to Cart</button>
                 </div>
               </div>
@@ -65,4 +65,4 @@ const ProductList = () => {
 };
 
 
-export default ProductList;
+export default ProductHome;

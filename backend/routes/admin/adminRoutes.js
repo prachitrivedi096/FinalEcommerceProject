@@ -1,0 +1,15 @@
+const express = require('express');
+const authenticateAdmin = require('../../middlewares/authMiddleware');
+const { getAllProducts, createProduct } = require('../../controllers/productController');
+const router = express.Router();
+
+// Admin login route
+router.post('/login', authenticateAdmin, (req, res) => {
+  res.status(200).json({ message: 'Admin authenticated successfully' });
+});
+
+// Admin product routes
+router.get('/products', authenticateAdmin, getAllProducts);
+router.post('/products', authenticateAdmin, createProduct);
+
+module.exports = router;

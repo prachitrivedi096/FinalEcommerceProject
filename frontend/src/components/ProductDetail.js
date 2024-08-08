@@ -23,7 +23,7 @@ const ProductDetail = () => {
 
   const handleAddToCart = () => {
     addToCart(product, quantity);
-    navigate('/ShoppingCart');
+    navigate('/user/ShoppingCart');
   };
 
   return (

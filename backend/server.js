@@ -2,7 +2,8 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
-const productRoutes = require('./routes/productRoutes');
+const productRoutes = require('./routes/user/productRoutes');
+const adminRoutes = require('./routes/admin/adminRoutes');
 
 const app = express();
 
@@ -21,12 +22,13 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
         app.listen(PORT, () => {
             console.log(`Server running on port ${PORT}`);
         });
-        mongoose.connection.close();
+       // mongoose.connection.close();
     })
     .catch(err => {
         console.error('MongoDB connection error:', err.message);
     });
 
 app.use('/api/products', productRoutes);
+app.use('/api/admin', adminRoutes);
 
 
