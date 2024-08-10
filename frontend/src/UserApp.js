@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
-//import { Routes, Route, NavLink, Router } from 'react-router-dom';
+//import { Routes, Route, NavLink } from 'react-router-dom';
 import ProductHome from './components/ProductHome';
 import ProductDetail from './components/ProductDetail';
 import Cart from './components/ShoppingCart';

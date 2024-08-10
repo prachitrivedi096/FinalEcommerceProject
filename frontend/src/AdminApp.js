@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AdminLogin from './components/admin/AdminLogin';
 import AdminDashboard from './components/admin/AdminDashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 
 const AdminApp = () => {
@@ -9,7 +10,13 @@ const AdminApp = () => {
       <div>
         <Routes>
           <Route path="/login" element={<AdminLogin />} />
-          <Route path="/dashboard" element={<AdminDashboard />} />
+          <Route path="/dashboard" 
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          } 
+        />
         </Routes>
       </div>
   );
