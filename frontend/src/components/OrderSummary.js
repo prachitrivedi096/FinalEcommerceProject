@@ -12,7 +12,6 @@ const OrderSummary = () => {
   };
 
   const handlePlaceOrder = () => {
-    // Simulate placing the order
     console.log('Order placed successfully!');
     clearCart();
     navigate('/order-confirmation');

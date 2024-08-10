@@ -18,7 +18,6 @@ const CheckoutForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can handle form submission here (e.g., send data to a server)
     console.log('Form Submitted:', formData);
     navigate('/order-summary');
   };
