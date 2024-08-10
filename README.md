@@ -23,3 +23,14 @@ npm i
 ## To run the project
 cd frontend
 npm start
+
+## To start server
+cd backend
+node server.js
+
+# URL to run Admin Panel
+http://localhost:3000/admin/login
+
+# URL to run User
+http://localhost:3000/
+http://localhost:3000/user
