@@ -4,7 +4,6 @@ import axios from 'axios';
 const ProductManagement = () => {
   const [products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState({ name: '', description: '', price: 0, category: '' });
-  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     const fetchProductsAndCategories = async () => {
@@ -14,11 +13,6 @@ const ProductManagement = () => {
           headers: { Authorization: `Bearer ${adminToken}` }
         });
         setProducts(productsResponse.data);
-
-        const categoriesResponse = await axios.get('/api/admin/categories', {
-          headers: { Authorization: `Bearer ${adminToken}` }
-        });
-        setCategories(categoriesResponse.data);
       } catch (err) {
         console.error('Error fetching data', err);
       }
@@ -28,15 +22,15 @@ const ProductManagement = () => {
   }, []);
 
   const handleCreateProduct = async () => {
-    const adminToken = localStorage.getItem('adminToken');
-    try {
-      const response = await axios.post('/api/admin/products', newProduct, {
-        headers: { Authorization: `Bearer ${adminToken}` }
-      });
-      setProducts([...products, response.data]);
-      setNewProduct({ name: '', description: '', price: 0, category: '' });
-    } catch (err) {
-      console.error('Error creating product', err);
+    const adminCred = {
+      username: 'admin',
+      password: 'admin123'
+    };
+
+    try{
+      const response = await axios.post(
+      );
+    }catch (err) {
     }
   };
 
@@ -78,19 +72,19 @@ const ProductManagement = () => {
         onChange={(e) => setNewProduct({ ...newProduct, category: e.target.value })}
       >
         <option value="">Select Category</option>
-        {categories.map(category => (
-          <option key={category._id} value={category._id}>{category.name}</option>
-        ))}
+          <option key="Earrings" value="Earrings">Earrings</option>
+          <option key="Bracelets" value="Bracelets">Bracelets</option>
+        
       </select>
       <button onClick={handleCreateProduct}>Create Product</button>
-      <ul>
+      {/* <ul>
         {products.map(product => (
           <li key={product._id}>
             {product.name} - {product.price} - {product.category.name}
             <button onClick={() => handleDeleteProduct(product._id)}>Delete</button>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };

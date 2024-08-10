@@ -5,7 +5,6 @@ import './AdminDashboard.css';
 
 const AdminDashboard = () => {
   const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
 
   // useEffect(() => {
@@ -34,10 +33,6 @@ const AdminDashboard = () => {
     navigate('/admin/login');
   };
 
-  const handleNavigateToCategories = () => {
-    navigate('/admin/categories');
-  };
-
   const handleNavigateToProducts = () => {
     navigate('/admin/products');
   };
@@ -46,17 +41,10 @@ const AdminDashboard = () => {
     <div className="admin-dashboard">
       <nav className="admin-header">
         <a onClick={() => navigate('/admin/dashboard')}>Home</a>
-        <a onClick={handleNavigateToCategories}>Manage Categories</a>
         <a onClick={handleNavigateToProducts}>Manage Products</a>
         <a onClick={handleLogout}>Logout</a>
       </nav>
       <h2>Admin Dashboard</h2>
-      <h3>Categories</h3>
-      <ul>
-        {categories.map(category => (
-          <li key={category.id}>{category.name}</li>
-        ))}
-      </ul>
       <h3>Products</h3>
       <ul>
         {products.map(product => (

@@ -5,6 +5,10 @@ import ProductHome from './components/ProductHome';
 import ProductDetail from './components/ProductDetail';
 import Cart from './components/ShoppingCart';
 import { CartProvider } from './contexts/CartContext';
+import Checkout from './components/CheckoutForm';
+import OrderSummary from './components/OrderSummary';
+import OrderConfirmation from './components/OrderConfirmation';
+
 import './App.css';
 
 const UserApp = () => {
@@ -21,6 +25,9 @@ const UserApp = () => {
                         <Route path="/" element={<ProductHome />} />
                         <Route path="/product/:id" element={<ProductDetail />} />
                         <Route path="/ShoppingCart" element={<Cart />} />
+                        <Route path="/checkout" element={<Checkout/>} />
+                        <Route path="/order-summary" element={<OrderSummary />} />
+                        <Route path="/order-confirmation" element={<OrderConfirmation />} />
                     </Routes>
                 </div>
         </CartProvider>

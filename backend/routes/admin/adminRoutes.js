@@ -10,12 +10,6 @@ router.post('/login', authenticateAdmin, (req, res) => {
   res.status(200).json({ message: 'Admin authenticated successfully' });
 });
 
-// Admin category routes
-router.get('/categories', authenticateAdmin, getAllCategories);
-router.post('/categories', authenticateAdmin, createCategory);
-router.put('/categories/:id', authenticateAdmin, updateCategory);
-router.delete('/categories/:id', authenticateAdmin, deleteCategory);
-
 // Admin product routes
 router.get('/products', authenticateAdmin, getAllProducts);
 router.post('/products', authenticateAdmin, createProduct);

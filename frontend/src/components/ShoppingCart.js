@@ -7,6 +7,11 @@ const Cart = () => {
   const { cart, removeFromCart } = useCart();
   const navigate = useNavigate();
 
+
+  const handleCheckout = () => {
+    navigate('/checkout');
+  };
+
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
@@ -22,6 +27,9 @@ const Cart = () => {
                 <p>Price: ${item.price}</p>
                 <p>Quantity: {item.quantity}</p>
                 <button className="remove-button" onClick={() => removeFromCart(item.id)}>Remove from Cart</button>
+                {cart.length > 0 && (
+               <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
+                )}
               </div>
             </li>
           ))}

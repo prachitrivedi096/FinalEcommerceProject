@@ -26,6 +26,11 @@ const ProductDetail = () => {
     navigate('/user/ShoppingCart');
   };
 
+  const handleCheckout = () => {
+    addToCart(product, quantity); // Ensure the product is added to the cart
+    navigate('/checkout');
+  };
+
   return (
     <div className="product-detail">
       <img src={product.photoURL} alt={product.name} />
@@ -44,6 +49,7 @@ const ProductDetail = () => {
         {/* Buttons */}
         <div className="product-buttons">
           <button className="add-to-cart-button" onClick={handleAddToCart}>Add to Cart</button>
+          <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
         </div>
       </div>
     </div>
